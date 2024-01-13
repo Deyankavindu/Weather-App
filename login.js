@@ -11,21 +11,18 @@ function showPart(part) {
     }
 }
 
-// Initial setup (show login by default)
 showPart('login');
 
 function attemptLogin() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    // Retrieve stored user data from local storage
     const storedUserData = JSON.parse(localStorage.getItem('user_data')) || {};
 
-    // Check if the entered username and password match the stored data
     if (username === storedUserData.username && password === storedUserData.password) {
         document.getElementById('error-message').textContent = '';
         alert('Login successful!');
-        // Add your logic to redirect or perform other actions after successful login
+
     } else {
         document.getElementById('error-message').textContent = 'Invalid username or password.';
     }
@@ -36,7 +33,11 @@ function attemptSignup() {
     const signupEmail = document.getElementById('signup-email').value;
     const signupPassword = document.getElementById('signup-password').value;
 
-    // Store user data in local storage
+    if (!signupUsername || !signupEmail || !signupPassword) {
+        document.getElementById('signup-error-message').textContent = 'All fields are required.';
+        return;
+    }
+
     localStorage.setItem('user_data', JSON.stringify({
         username: signupUsername,
         email: signupEmail,
@@ -46,10 +47,9 @@ function attemptSignup() {
     document.getElementById('signup-error-message').textContent = '';
     alert('Signup successful! Logging in...');
 
-    // Automatically attempt login using signup data
     document.getElementById('username').value = signupUsername;
     document.getElementById('password').value = signupPassword;
 
-    // Call the attemptLogin function to log in
     attemptLogin();
 }
+

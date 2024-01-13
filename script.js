@@ -68,6 +68,7 @@ function setWeatherIcon(weatherCondition) {
     }
     document.querySelector(".weather").style.display = "block";
     document.querySelector(".error").style.display = "none";
+    document.querySelector(".view-btn").style.display = "block";
 }
 
 function displayError(message) {

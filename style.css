@@ -14,15 +14,15 @@ body{
     
 }
 .card{
-    width: 90%;
-    max-width: 700px;
+    width: 850px;
     background: linear-gradient(135deg , #00feba,#5b548a);
     color: white;
     margin: 100px auto 0;
     border-radius: 20px;
-    padding: 40px 35px;
+    padding: 40px 40px;
     text-align: center;
     opacity: 0.8;
+    /* margin-bottom: 100px; */
 }
 .search{
     width: 100%;
@@ -40,7 +40,8 @@ body{
     border-radius: 30px;
     flex: 1;
     margin-right: 16px;
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: 700;
 }
 .search button{
     border: 0;
@@ -101,3 +102,69 @@ body{
     margin: 10px;
     display: none;
 }
+.cards .mini-card{
+    width: 100px;
+    height: 130px;
+    border-radius: 20px;
+    color: #000000;
+    background-color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    margin-top: 20px;
+    opacity: 0.9;
+    display: none;
+ }
+ .mini-card h2{
+    font-size: 15px;
+    font-weight: 600;
+ }
+ .mini-card .card-icon{
+    width: 50%;
+    margin: 0 auto;
+ }
+ .mini-card .day-temp{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .card-icon img{
+    width: 40px;
+    height: 40px;
+ }
+ .col{
+    gap: 12px;
+    justify-content: center;
+ }
+ 
+          
+ .view-btn {
+    margin: 10px;
+    padding: 12px 40px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(7, 7, 7);            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 30px;
+    display: none;
+    
+  }
+
+  .view-btn:hover {
+    background-position: right center;
+    color: #000000;
+    text-decoration: none;
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+
+  }
+  
